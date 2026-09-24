@@ -1,5 +1,7 @@
-import * as bookmodels from '../models/bookmodels.js';
+import * as bookmodel from '../models/bookmodels.js';
 
-export const getAllBooks = async () => {
-  return await bookmodels.getAllBooks();
+
+export const fetchAllBooks = async () => {
+   const books = await bookmodel.fetchAllBooks();
+  return books;
 };
