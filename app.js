@@ -7,6 +7,9 @@ import studentsRoutes from './routes/studentsRoutes.js'
 // create express app
 const app = express();
 
+//to parse.incoming.data
+app.use(express.json());
+
 //Routes implementation
 app.use('/book', bookRoutes);
 
