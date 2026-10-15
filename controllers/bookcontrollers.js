@@ -45,3 +45,21 @@ export const editbook = async (req, res) => {
         });
     }
 }
+
+//delete
+export const deletebook = async (req, res) => {
+    const { id } = req.params;
+   
+    try{
+        const deletedbook = await bookservices.deletebook(parseInt(id));
+        res.status(200).json({
+            success: true,
+            message: deletedbook
+        });
+    }catch(e){
+        console.log(e);
+        res.status(500).json({
+            error: "Internal Server Error"
+        });
+    }
+}
