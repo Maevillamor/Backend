@@ -5,5 +5,7 @@ const bookrouter = express.Router();
 
 bookrouter.get('/all', bookcontroller.fetchAllBooks);
 bookrouter.post('/', bookcontroller.createbook);
+bookrouter.put('/:id', bookcontroller.editbook);
+
 export default bookrouter;
 

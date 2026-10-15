@@ -5,7 +5,14 @@ export const fetchAllstudents = async () => {
   return students;
 };
 
+//insert
 export const createstudents = async (students) => {
   const studentsId = await studentsmodel.insert(students);
   return studentsId;
+}
+
+//update
+export const updatestudents = async (students) => {
+  const updatedstudents = await studentsmodel.update(students);
+  return updatedstudents;
 }
