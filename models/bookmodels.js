@@ -6,6 +6,18 @@ export const fetchAllBooks = async () => {
   return rows;
 };
 
+export const findbookByNameAndAuthor = async (book) =>{
+  const[rows] = await pool.query ("SELECT * FROM book WHERE name=? AND author=?",
+     [book.name, book.author]  );
+
+  return rows;
+}
+
+export const findbookByid = async (id) =>{
+  const[rows] = await pool.query ("SELECT * FROM book WHERE id=?",
+     [id]  );
+  return rows;
+}
 
 //insert
 export const insert = async (book) =>{
